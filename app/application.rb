@@ -20,9 +20,9 @@ class Application
     else
       @@cart.each do |item|
      resp.write "#{item}\n"
+      end
     end
-  end
-    req.path.match(/add/)
+  elsif req.path.match(/add/)
     item_new = req.params["item"]
     if @@items.include? item_new
       @@cart << item_new
